@@ -1,0 +1,17 @@
+Robotics learn 
+
+1. https://github.com/kang702/robotic-books
+
+2. https://www.youtube.com/playlist?list=PLggLP4f-rq02vX0OQQ5vrCxbJrzamYDfx
+
+3. https://github.com/iuliaferoli/robot_arm - aurdino arm-robo
+
+4. https://github.com/google-deepmind/mujoco_menagerie
+
+5. https://docs.opencv.org/4.13.0/db/da9/tutorial_aruco_board_detection.html
+
+6. https://github.com/felixokolo/MuJoCo_tutorials
+
+7. https://github.com/TrossenRobotics/trossen_arm_mujoco - rl by vdo and simulate to pick
+
+8. https://ocw.mit.edu/courses/6-832-underactuated-robotics-spring-2009/ - MIT - undergraduate Robotic course
