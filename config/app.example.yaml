@@ -1,0 +1,49 @@
+# SaltSort backend runtime configuration (example).
+# Copy to config/app.local.yaml (git-ignored) and edit for your machine.
+# Values below are trial settings, NOT measured or optimal values.
+# Physical layout (tray pose, bin, chunk size) lives in config/scene.example.yaml.
+
+app:
+  host: "127.0.0.1"   # must stay loopback for MVP 1 (spec rule 7)
+  port: 8000
+  mode: "manual"      # manual | real_model | replay
+
+camera:
+  source: 0           # webcam index, rtsp:// URL, or a video/image file path (replay)
+  camera_id: "cam-01"
+  width: 640
+  height: 480
+  max_capture_buffer_frames: 2
+  stale_after_s: 2.0  # no new frame for this long -> camera error, picking stops
+
+model:
+  backend: "none"     # none | onnx
+  weights_path: null  # e.g. models/best.onnx (git-ignored, supplied by collaborator)
+  classes_path: "config/classes.example.yaml"
+  confidence_threshold: 0.70  # trial setting only; confidence is not accuracy
+  iou_threshold: 0.45
+  detect_every_n_frames: 1    # >1 decimates inference while the camera view stays live
+
+tracking:
+  min_stable_frames: 3
+  max_missed_frames: 15
+  iou_match_threshold: 0.3
+  min_bbox_size_px: 12
+  duplicate_radius_m: 0.025   # a new target this close to a queued/processed one is the same chunk
+  max_queue: 10
+  max_active_pick_requests: 1
+  prevent_repeat_picks_until_reset: true
+
+calibration:
+  path: "config/calibration.local.json"
+  min_holdout_points: 5
+  max_holdout_error_mm: 10.0  # trial tolerance; tighten once the rig is fixed
+
+robot:
+  grasp_mode: "kinematic_demo"  # kinematic_demo | contact_physics
+
+simulation:
+  url: "http://127.0.0.1:8001"  # simulator process (python -m saltsim.run)
+
+telemetry:
+  event_log_dir: "logs"

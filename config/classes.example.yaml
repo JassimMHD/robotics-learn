@@ -1,0 +1,19 @@
+# Class mapping for the collaborator's YOLOv8 salt detector.
+#
+# Source: vision-model-training/salt-detection-backend/src/inference/postprocessing.service.ts
+# (class order of the exported ONNX head: output [1, 7, 2100] at 320x320 input).
+# TO CONFIRM against the training data.yaml once the weights are supplied.
+
+model_classes:
+  0: impure
+  1: pure
+  2: unwanted
+
+roles:
+  # Eligible for a simulated reject pick.
+  reject: [impure]
+  # Never picked.
+  accept: [pure]
+  # Never picked. Includes hands, keys, paper, etc. While any of these is
+  # inside the tray, new autonomous picks are paused ("workspace obstructed").
+  obstruction: [unwanted]
