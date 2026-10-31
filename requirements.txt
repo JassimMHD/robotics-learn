@@ -1,0 +1,11 @@
+# Direct dependencies (same as pyproject.toml). Exact working versions: requirements.lock.txt.
+mujoco
+numpy
+opencv-python
+onnxruntime
+fastapi
+uvicorn[standard]
+pydantic
+pyyaml
+pytest
+httpx

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Vendor robot assets (cloned at a pinned commit, see simulator/assets/README.md)
+vendor/
+
+# Model weights, private footage, generated outputs
+*.pt
+*.onnx
+*.engine
+models/
+recordings/
+benchmarks/
+markers/
+logs/
+*.log
+
+# Machine-specific config and calibration data
+config/*.local.yaml
+config/*.local.json
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
