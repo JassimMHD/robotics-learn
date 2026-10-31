@@ -1,0 +1,11 @@
+{
+  "description": "Deterministic MANUAL demo targets in the tray frame (meters). Not detections.",
+  "frame": "tray",
+  "targets": [
+    {"label": "A", "x_m": 0.08, "y_m": 0.08},
+    {"label": "B", "x_m": 0.20, "y_m": 0.20},
+    {"label": "C", "x_m": 0.32, "y_m": 0.10},
+    {"label": "B-duplicate (must be refused)", "x_m": 0.205, "y_m": 0.205},
+    {"label": "outside tray (must be refused)", "x_m": 0.55, "y_m": 0.10}
+  ]
+}
